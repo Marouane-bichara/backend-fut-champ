@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   playergoals.forEach((playergoal) => {
     playergoal.addEventListener("change", () => {
-      console.log("hello");
+      let playerid = playergoal.getAttribute("id")
+      console.log(playerid);
+      console.log(playergoal.value);
+      
     });
   });
 });
