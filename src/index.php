@@ -40,7 +40,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <?php
           include("../config/databse.php");
-          $query = "SELECT players.name AS player_name, players.position, goolkeeper.rating, club.name AS club_name, players.status as playerStatus, players.photo as player_image , players.id as player_id FROM players 
+          $query = "SELECT players.name AS player_name, players.position, goolkeeper.rating, club.name AS club_name, players.status as playerStatus, players.photo as player_image , players.id as player_id , players.deleted as player_deleted FROM players 
                     JOIN goolkeeper ON goolkeeper.id_player = players.id
                     JOIN club ON club.id_player = players.id";
           $resault = mysqli_query($conn, $query);
@@ -63,8 +63,14 @@
                       <label class='block text-sm'>Status</label>
                       <select id='{$row['player_id']}' class='playerselect w-full mt-1 border rounded px-3 py-2'>
                         <option value='{$row['playerStatus']}'>{$row['playerStatus']}</option>
-                        <option value='field'>Field</option>
-                        <option value='reserve'>Reserve</option>
+                        <option value='Field'>Field</option>
+                        <option value='Reserve'>Reserve</option>
+                        <option value='Null'>Not assignée</option>
+                      </select>
+                      <select id='{$row['player_id']}' name='selectPlayer' class='playerDelted w-full mt-1 border rounded px-3 py-2'>
+                        <option value='{$row['player_deleted']}'>{$row['player_deleted']}</option>
+                        <option value='deleted'>Deleted</option>
+                        <option value='Not Deleted'>Not Deleted</option>
                       </select>
                     </div>
                     <div class='p-3'>
@@ -83,7 +89,7 @@
         <h2 class="text-2xl font-bold mb-4">Players</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <?php
-          $query = "SELECT players.name AS player_name, players.position, otherplayers.rating, club.name AS club_name , players.status as playerStatus , players.photo as player_image , players.id as player_id FROM players 
+          $query = "SELECT players.name AS player_name, players.position, otherplayers.rating, club.name AS club_name , players.status as playerStatus , players.photo as player_image , players.id as player_id, players.deleted as player_deleted FROM players 
                     JOIN otherplayers ON otherplayers.id_player = players.id
                     JOIN club ON club.id_player = players.id";
           $resault = mysqli_query($conn, $query);
@@ -105,8 +111,14 @@ $j = 0;
                       <label class='block text-sm'>Status</label>
                       <select id='{$row['player_id']}' name='selectPlayer' class='playerselect w-full mt-1 border rounded px-3 py-2'>
                         <option value='{$row['playerStatus']}'>{$row['playerStatus']}</option>
-                        <option value='field'>Field</option>
-                        <option value='reserve'>Reserve</option>
+                        <option value='Field'>Field</option>
+                        <option value='Reserve'>Reserve</option>
+                        <option value='Null'>Not assignée</option>
+                      </select>
+                      <select id='{$row['player_id']}' name='selectPlayer' class='playerDelted w-full mt-1 border rounded px-3 py-2'>
+                        <option value='{$row['player_deleted']}'>{$row['player_deleted']}</option>
+                        <option value='deleted'>Deleted</option>
+                        <option value='Not Deleted'>Not Deleted</option>
                       </select>
                     </div>
                     <div class='p-3'>
@@ -124,6 +136,7 @@ $j = 0;
   </div>
 
   <script src="../src/scripts/sendRequest.js"></script>
+  <script src="../src/scripts/deletplayer.js"></script>
 </body>
 
 </html>

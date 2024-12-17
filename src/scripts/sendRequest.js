@@ -1,17 +1,17 @@
-// async function getData() {
-//   let arrayOfPlayers = [];
-//   try {
-//     const response = await fetch("../src/serverPhp/getData.php");
-//     if (!response.ok) {
-//       throw new Error('Network response was not ok');
-//     }
-//     const data = await response.json(); 
-//     console.log(data);  
-//   } catch (error) {
-//     console.error('There was a problem with the fetch operation:', error);
-//   }
-// }
-// getData()
+async function getData() {
+  let arrayOfPlayers = [];
+  try {
+    const response = await fetch("../src/serverPhp/getData.php");
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json(); 
+    console.log(data);  
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
+}
+getData()
 
 
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   playergoals.forEach((playergoal) => {
     playergoal.addEventListener("change", () => {
       let playerid = playergoal.getAttribute("id")
-      let playerStatu;
+      let playerStatu = playergoal.value;
       console.log(playerid);
       console.log(playergoal.value);
       
