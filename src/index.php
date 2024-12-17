@@ -63,8 +63,8 @@
                       <label class='block text-sm'>Status</label>
                       <select id='{$row['player_id']}' class='playerselect w-full mt-1 border rounded px-3 py-2'>
                         <option value='{$row['playerStatus']}'>{$row['playerStatus']}</option>
-                        <option value='Field'>Field</option>
-                        <option value='Reserve'>Reserve</option>
+                        <option value='field'>Field</option>
+                        <option value='reserve'>Reserve</option>
                       </select>
                     </div>
                     <div class='p-3'>
@@ -105,8 +105,8 @@ $j = 0;
                       <label class='block text-sm'>Status</label>
                       <select id='{$row['player_id']}' name='selectPlayer' class='playerselect w-full mt-1 border rounded px-3 py-2'>
                         <option value='{$row['playerStatus']}'>{$row['playerStatus']}</option>
-                        <option value='Field'>Field</option>
-                        <option value='Reserve'>Reserve</option>
+                        <option value='field'>Field</option>
+                        <option value='reserve'>Reserve</option>
                       </select>
                     </div>
                     <div class='p-3'>
