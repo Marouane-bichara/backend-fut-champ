@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($playerss["id"], $playerss["status"])) {
 
         $id = intval($playerss['id']); 
-        $status = htmlspecialchars($playerss['status']); 
+        $status = htmlspecialchars($playerss['status']);
 
  
         $query = "UPDATE players SET status = '$status' WHERE id = $id";
