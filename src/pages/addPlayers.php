@@ -83,19 +83,19 @@
     </div>
     <div class="flex flex-col">
         <label for="passing" class="passing text-gray-800 text-sm mb-2">Passing</label>
-        <input type="number" id="passing" placeholder="Player's passing rating" class="p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="number" id="passing" placeholder="Player's passing rating" class="passinginput p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <div class="flex flex-col">
         <label for="dribbling" class="dribbling text-gray-800 text-sm mb-2" >Dribbling</label>
-        <input type="number" id="dribbling" placeholder="Player's dribbling rating" class="p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="number" id="dribbling" placeholder="Player's dribbling rating" class="dribblinginput p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <div class="flex flex-col">
         <label for="defending" class="defending text-gray-800 text-sm mb-2">Defending</label>
-        <input type="number" id="defending" placeholder="Player's defending rating" class="p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="number" id="defending" placeholder="Player's defending rating" class="defendinginput p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <div class="flex flex-col">
         <label for="physical" class="physical text-gray-800 text-sm mb-2">Physical</label>
-        <input type="number" id="physical" placeholder="Player's physical rating" class="p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="number" id="physical" placeholder="Player's physical rating" class="physicalinput p-3 rounded bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
     </div>
     <button id="btn" class="col-span-1 sm:col-span-2 lg:col-span-3 bg-blue-600 hover:bg-blue-500 p-3 rounded text-white mt-6">
         Add Player
@@ -107,7 +107,7 @@
 </section>
     </main>
   </div>
-  <script src="../scripts/addplayer.js"></script>
+  <script src="../scripts/addplayer.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>
 
