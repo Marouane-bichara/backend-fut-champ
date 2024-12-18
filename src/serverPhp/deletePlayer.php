@@ -9,7 +9,7 @@
         if(isset($playersde["id"]))
         {
             $id = intval($playersde["id"]);
-            $query = "UPDATE players SET players.deleted = DATE where players.id = $id";
+            $query = "UPDATE players SET deleted = CURRENT_TIMESTAMP where id = $id";
             $resault = mysqli_query($conn , $query);
         }
     }
