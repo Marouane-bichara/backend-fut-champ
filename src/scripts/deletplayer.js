@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         playerdelted.addEventListener("change",()=>{
             let playerid = playerdelted.getAttribute("id");
             let deleted = playerdelted.value;
-     
-
+           
 
             // if(deleted == "deleted")
             // {
@@ -16,7 +15,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             console.log(deleted);
             let deletep =
             {
-                id : playerid
+                id : playerid,
+                statudelet : deleted
             }
             fetch("../src/serverPhp/deletePlayer.php",
                {
