@@ -19,7 +19,6 @@
       <nav class="flex-1 mt-4">
         <ul class="space-y-2">
           <li><a href="./index.php" class="block py-2 px-4 hover:bg-blue-700">Players</a></li>
-          <li><a href="#clubs" class="block py-2 px-4 hover:bg-blue-700">Clubs</a></li>
           <li><a href="./pages/addPlayers.php" class="block py-2 px-4 hover:bg-blue-700">Add Player</a></li>
           <li><a href="./pages/field.php" class="block py-2 px-4 hover:bg-blue-700">Field</a></li>
         </ul>
@@ -40,10 +39,9 @@
                     JOIN goolkeeper ON goolkeeper.id_player = players.id
                     JOIN club ON club.id_player = players.id";
           $resault = mysqli_query($conn, $query);
-          $j = 0;
           while ($row = mysqli_fetch_assoc($resault)) {
 
-            if($row["playerStatus"] == null)
+            if($row["playerStatus"] == null || $row["playerStatus"] == "Null")
             {
               $row["playerStatus"] = "Not selected";
             }
@@ -75,7 +73,6 @@
                     </div>
                     
                   </div>";
-                  $j++;
           }
           ?>
         </div>
@@ -89,9 +86,8 @@
                     JOIN otherplayers ON otherplayers.id_player = players.id
                     JOIN club ON club.id_player = players.id";
           $resault = mysqli_query($conn, $query);
-$j = 0;
           while ($row = mysqli_fetch_assoc($resault)) {
-            if($row["playerStatus"] == null)
+            if($row["playerStatus"] == null || $row["playerStatus"] == "Null")
             {
               $row["playerStatus"] = "Not selected";
             }
@@ -123,7 +119,6 @@ $j = 0;
                     </div>
 
                   </div>";
-                  $j++;
           }
           ?>
         </div>
@@ -131,8 +126,8 @@ $j = 0;
     </main>
   </div>
 
-  <script src="../src/scripts/sendRequest.js"></script>
-  <script src="../src/scripts/deletplayer.js"></script>
+  <script src="../src/scripts/sendRequest.js?v=<?php echo time(); ?>"></script>
+  <script src="../src/scripts/deletplayer.js?v=<?php echo time(); ?>"></script>
 </body>
 
 </html>

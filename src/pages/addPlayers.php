@@ -18,7 +18,6 @@
       <nav class="flex-1 mt-4">
         <ul class="space-y-2">
         <li><a href="../index.php" class="block py-2 px-4 hover:bg-blue-700">Players</a></li>
-          <li><a href="#clubs" class="block py-2 px-4 hover:bg-blue-700">Clubs</a></li>
           <li><a href="../pages/addPlayers.php" class="block py-2 px-4 hover:bg-blue-700">Add Player</a></li>
           <li><a href="../pages/field.php" class="block py-2 px-4 hover:bg-blue-700">Field</a></li>
         </ul>
