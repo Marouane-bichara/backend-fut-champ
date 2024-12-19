@@ -8,10 +8,20 @@
 
         if(isset($playersde["id"]))
         {
-            $id = intval($playersde["id"]);
-            $query = "UPDATE players SET deleted = CURRENT_TIMESTAMP where id = $id";
-            $resault = mysqli_query($conn , $query);
+            if($playersde["statudelet"] == "deleted")
+            {
+                $id = intval($playersde["id"]);
+                $query = "UPDATE players SET deleted = CURRENT_TIMESTAMP where id = $id";
+                $resault = mysqli_query($conn , $query);
+            }
+            if($playersde["statudelet"] == "Not Deleted")
+            {
+                $idoption2 = intval($playersde["id"]);
+                $queryoption2 = "UPDATE players SET deleted = NULL where id = $idoption2";
+                $resaultoption2 = mysqli_query($conn , $queryoption2);
+            }
+
         }
     }
     mysqli_close($conn);
-?>
+?> 

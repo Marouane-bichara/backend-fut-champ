@@ -7,16 +7,13 @@ document.addEventListener("DOMContentLoaded",()=>{
             let deleted = playerdelted.value;
            
 
-            // if(deleted == "deleted")
-            // {
-            //     deleted = Date()
-            // }
+
             console.log(playerid);
             console.log(deleted);
             let deletep =
             {
                 id : playerid,
-                statudelet : deleted
+                statudelet : deleted 
             }
             fetch("../src/serverPhp/deletePlayer.php",
                {

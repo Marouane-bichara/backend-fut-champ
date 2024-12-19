@@ -55,7 +55,7 @@ btn.addEventListener("click" , (e)=>{
             throw new Error('Network response was not ok');
           }
         data = await response.json(); 
-          console.log(data[0].name);  
+          console.log(data[1].name);  
         } catch (error) {
           console.error('There was a problem with the fetch operation:', error);
         }
@@ -158,17 +158,76 @@ btn.addEventListener("click" , (e)=>{
             errorH2.textContent = "Input number must be between 0 & 99";
             return;  
         }
-
+             let found = 0;
 
         for (let i = 0; i < data.length; i++) {
-            if(nome.value == data[i].name)
+            if(nome.value.trim().toLowerCase() === data[i].name.trim().toLowerCase())
             {
                 errorH2.innerHTML = ''
                 errorH2.classList.add("text-[red]");
                 errorH2.textContent = "User deja exist";
-                return;   
+                found = 1;
+                return;
             }
         }
+
+       if(!found)
+       {
+        let playerinformations;
+            if(selectposition.value == "GK")
+            {
+                playerinformations = {
+                    name : nome.value,
+                    photo: urlphoto.value,
+                    position : selectposition.value,
+                    nationality : nationaliteInput.value,
+                    flage : urldrapeau.value,
+                    club : clubname.value,
+                    logo : urllogoclub.value,
+                    rating : overallrating.value,
+                    Diving : paceinput.value,
+                    Handling : shootinginput.value,
+                    Kicking : passinginput.value,
+                    Reflexes : dribblinginput.value,
+                    Speed : defendinginput.value,
+                    Positioning : physicalinput.value
+                }
+                console.log(playerinformations);
+                
+            }
+            if(selectposition.value != "GK")
+            {
+                playerinformations = {
+                    name : nome.value,
+                    photo: urlphoto.value,
+                    position : selectposition.value,
+                    nationality : nationaliteInput.value,
+                    flage : urldrapeau.value,
+                    club : clubname.value,
+                    logo : urllogoclub.value,
+                    rating : overallrating.value,
+                    pace : paceinput.value,
+                    shooting : shootinginput.value,
+                    passing : passinginput.value,
+                    dribbling : dribblinginput.value,
+                    defending : defendinginput.value,
+                    physical : physicalinput.value
+                }
+                console.log(playerinformations);
+
+            }
+
+           fetch("../serverPhp/ajouterPlayer.php",
+            {
+                method : "POST",
+                headers : {
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+                body : JSON.stringify(playerinformations),
+            }
+           ).then(response=> response.json())
+           .then(data => console.log(data))
+       }
         
 
 });
