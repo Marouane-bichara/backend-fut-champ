@@ -19,6 +19,8 @@
         <ul class="space-y-2">
         <li><a href="../index.php" class="block py-2 px-4 hover:bg-blue-700">Players</a></li>
           <li><a href="../pages/addPlayers.php" class="block py-2 px-4 hover:bg-blue-700">Add Player</a></li>
+          <li><a href="../pages/editplayer.php" class="block py-2 px-4 hover:bg-blue-700">Edit Player</a></li>
+
           <li><a href="../pages/field.php" class="block py-2 px-4 hover:bg-blue-700">Field</a></li>
         </ul>
       </nav>
